@@ -127,7 +127,7 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:lint",
+          "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
               "pkgs/cfg/tsconfig.lib.json",
@@ -139,5 +139,5 @@
       }
     }
   },
-  "defaultProject": "web"
+  "defaultProject": "cfg"
 }
