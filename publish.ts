@@ -52,12 +52,12 @@ async function main() {
   await syncData();
 
   console.log('Publishing new version', porjPkgJson.version);
+  const command = `yarn publish ${publishOptions} --tag latest`;
+  console.log(command);
 
-  await execute(` cd ${buildPath} && yarn publish ${publishOptions} --tag latest`).catch(
-    error => {
-      console.log(`Failed to publish package. ${error}`);
-    }
-  );
+  await execute(`cd ${buildPath} && ${command}`).catch(error => {
+    console.log(`Failed to publish package. ${error}`);
+  });
 }
 
 main();
