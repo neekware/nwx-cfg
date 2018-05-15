@@ -1,6 +1,6 @@
 {
-  "name": "cfg",
-  "version": "0.0.0",
+  "name": "@nwx/cfg",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
