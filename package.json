@@ -26,7 +26,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format": "node node_modules/.bin/prettier --single-quote --print-width 90 --write 'apps/**/src/*.{ts,css,scss,json}' 'pkgs/**/src/*.{ts,css,scss,json}'",
-    "publish": "ts-node ./publish.ts"
+    "publish": "ts-node ./tools/publish.ts"
   },
   "private": true,
   "dependencies": {
