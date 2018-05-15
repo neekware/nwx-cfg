@@ -114,7 +114,7 @@
           },
           "configurations": {
             "production": {
-              "project": "pkgs/cfg/ng-package.prod.json"
+              "project": "pkgs/cfg/ng-package.json"
             }
           }
         },

@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../builds/pkgs/@nwx/cfg",
+  "dest": "../../builds/nwx-cfg",
   "lib": {
     "flatModuleFile": "nwx-cfg",
     "entryFile": "index.ts",
