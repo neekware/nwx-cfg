@@ -24,7 +24,9 @@ async function main() {
 
   await execute(
     ` cd ${buildPath} && yarn publish  --new-version ${version} --tag latest`
-  );
+  ).catch(error => {
+    console.log(`Failed to publish package. ${error}`);
+  });
 }
 
 main();
