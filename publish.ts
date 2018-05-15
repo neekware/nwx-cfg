@@ -34,7 +34,8 @@ export const syncData = (): void => {
     'repository',
     'contributors',
     'keywords',
-    'bugs'
+    'bugs',
+    'private'
   ]);
 
   modulePkg = { ...modulePkg, ...parentInfo };
