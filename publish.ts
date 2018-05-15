@@ -1,9 +1,14 @@
 import { exec } from 'child_process';
+import { writeFile } from 'fs';
+import { pick, get } from 'lodash';
+import * as path from 'path';
 
-const jsonPkg = require('./package.json');
-const version = jsonPkg.version;
-const buildPath = 'builds/nwx-cfg';
-const publishOptions = '--access public --non-interactive --no-git-tag-version';
+const porjPkgJson = require('./package.json');
+const buildPath = './builds/nwx-cfg';
+const modulePkgPath = `${buildPath}/package.json`;
+const publishOptions = `--access public --non-interactive --no-git-tag-version --new-version ${
+  porjPkgJson.version
+}`;
 
 const execute = (script: string): Promise<any> => {
   return new Promise((resolvePromise, rejectPromise) => {
@@ -17,16 +22,42 @@ const execute = (script: string): Promise<any> => {
   });
 };
 
+export const syncData = (): void => {
+  let modulePkg = require(modulePkgPath);
+
+  // update common attributes
+  const parentInfo = pick(porjPkgJson, [
+    'author',
+    'version',
+    'license',
+    'homepage',
+    'repository',
+    'contributors',
+    'keywords',
+    'bugs'
+  ]);
+
+  modulePkg = { ...modulePkg, ...parentInfo };
+  // flush new files to build dir of each package
+  writeFile(
+    path.join(buildPath, 'package.json'),
+    JSON.stringify(modulePkg, null, 2),
+    () => {
+      console.error(`Flushed package.json  ...`);
+    }
+  );
+};
+
 async function main() {
-  const version = jsonPkg.version;
+  await syncData();
 
-  console.log('Publishing new version', version);
+  console.log('Publishing new version', porjPkgJson.version);
 
-  await execute(
-    ` cd ${buildPath} && yarn publish  --new-version ${version} --tag latest`
-  ).catch(error => {
-    console.log(`Failed to publish package. ${error}`);
-  });
+  await execute(` cd ${buildPath} && yarn publish ${publishOptions} --tag latest`).catch(
+    error => {
+      console.log(`Failed to publish package. ${error}`);
+    }
+  );
 }
 
 main();
