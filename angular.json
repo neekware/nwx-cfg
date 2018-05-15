@@ -45,18 +45,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "testapp:build"
+            "browserTarget": "web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "testapp:build:production"
+              "browserTarget": "web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "testapp:build"
+            "browserTarget": "web:build"
           }
         },
         "test": {
@@ -83,7 +83,7 @@
         }
       }
     },
-    "testapp-e2e": {
+    "web-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -91,7 +91,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "apps/web/e2e/protractor.conf.js",
-            "devServerTarget": "testapp:serve"
+            "devServerTarget": "web:serve"
           }
         },
         "lint": {
