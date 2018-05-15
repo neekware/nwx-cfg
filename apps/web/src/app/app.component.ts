@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CfgService, DefaultCfg } from 'pkgs/cfg';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = '@nwx/cfg';
+  options = {};
+  constructor(public cfg: CfgService) {
+    this.options = { ...DefaultCfg, ...{ pkgName: this.title } };
+  }
 }
