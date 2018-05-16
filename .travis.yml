@@ -21,10 +21,7 @@ before_script:
   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
 script:
-  - yarn pkg:lint
-  - yarn pkg:test:ci
-  - yarn pkg:build
-  - yarn int:lint
-  - yarn int:test:ci
-  - yarn int:build
-  - xvfb-run yarn int:e2e:ci
+  - yarn ci
+
+after_script:
+  - cat ./coverage/cfg/lcov.info | ./node_modules/coveralls/bin/coveralls.js
