@@ -13,8 +13,10 @@ addons:
   chrome: stable
 
 script:
-  - npm run lint:cfg
-  - npm run test:cfg
-  - npm run build:cfg
-  - npm run build:web
-  - xvfb-run npm run e2e web-e2e
+  - npm run pkg:lint
+  - npm run pkg:test
+  - npm run pkg:build
+  - npm run int:lint
+  - npm run int:test
+  - npm run int:build
+  - xvfb-run npm run int:e2e
