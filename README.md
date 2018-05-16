@@ -1,10 +1,10 @@
 # @nwx/cfg
 
-**A simple configuration module for Angular**
+**A simple configuration module for Angular applications**
 
 # Overview
 
-**@nwx/cfg** attempts to streamline angular configuration while keeping it **DRY**.
+**@nwx/cfg** attempts to streamline the app configuration while keeping it **DRY**.
 
 # How to install
 

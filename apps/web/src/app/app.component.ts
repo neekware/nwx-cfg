@@ -10,6 +10,6 @@ export class AppComponent {
   title = '@nwx/cfg';
   options = {};
   constructor(public cfg: CfgService) {
-    this.options = { ...DefaultCfg, ...{ pkgName: this.title } };
+    this.title = this.cfg.options.appName;
   }
 }
