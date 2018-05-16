@@ -5,12 +5,7 @@
     "type": "git",
     "url": "git+https://github.com/neekware/nwx-cfg.git"
   },
-  "keywords": [
-    "ng",
-    "angular",
-    "config",
-    "configuration"
-  ],
+  "keywords": ["ng", "angular", "config", "configuration"],
   "author": "Val Neekman",
   "contributors": [],
   "license": "MIT",
@@ -19,13 +14,14 @@
   },
   "homepage": "https://github.com/neekware/nwx-cfg",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "serve:web": "ng serve web",
+    "build:web": "ng build web",
+    "test:web": "ng test web --watch=false",
+    "e2e:web": "ng e2e web",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "format": "node node_modules/.bin/prettier --single-quote --print-width 90 --write 'apps/**/src/*.{ts,css,scss,json}' 'pkgs/**/src/*.{ts,css,scss,json}'",
+    "format":
+      "node node_modules/.bin/prettier --single-quote --print-width 90 --write 'apps/**/src/*.{ts,css,scss,json}' 'pkgs/**/src/*.{ts,css,scss,json}'",
     "release": "ts-node ./tools/release.ts -- "
   },
   "private": true,
