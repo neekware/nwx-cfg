@@ -6,21 +6,25 @@ node_js:
   - "9"
 
 cache:
+  yarn: true
   directories:
     - node_modules
 
 addons:
   chrome: stable
 
+install:
+  - yarn
+
 before_script:
   - "sudo chown root /opt/google/chrome/chrome-sandbox"
   - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
 
 script:
-  - npm run pkg:lint
-  - npm run pkg:test
-  - npm run pkg:build
-  - npm run int:lint
-  - npm run int:test
-  - npm run int:build
-  - xvfb-run npm run int:e2e
+  - yarn pkg:lint
+  - yarn pkg:test
+  - yarn pkg:build
+  - yarn int:lint
+  - yarn int:test
+  - yarn int:build
+  - xvfb-run yarn int:e2e
