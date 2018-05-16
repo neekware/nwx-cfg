@@ -8,8 +8,9 @@
 
 # How to install
 
-    1. npm install @nwx/cfg
-    2. yarn add @nwx/cfg
+    1. `npm install @nwx/cfg`
+    OR
+    2. `yarn add @nwx/cfg`
 
 # How to use
 
@@ -35,10 +36,9 @@ export const environment: AppCfg = {
     timeout: 3,
     // http headers to include in http connection to remote server
     headers: { 'Content-Type': 'application/json' }
-    // body of request when using http POST method (optional)
+    // body of request when using http POST method (default = {})
     body: {
-      id: 1,
-      password: 'foo'
+      // one or more app specific fields
     }
   }
 };
@@ -52,8 +52,10 @@ import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, CfgModule.forRoot(environment)],
-  providers: [],
+  imports: [
+    BrowserModule,
+    CfgModule.forRoot(environment)
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
@@ -66,9 +68,7 @@ import { Component } from '@angular/core';
 import { CfgService } from 'pkgs/cfg';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-root'
 })
 export class AppComponent {
   title = '@nwx/cfg';
@@ -77,7 +77,6 @@ export class AppComponent {
     this.options = { ...this.cfg.options, ...{ pkgName: this.title } };
   }
 }
-
 ```
 
 # Running the tests
