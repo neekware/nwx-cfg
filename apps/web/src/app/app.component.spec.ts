@@ -1,11 +1,21 @@
 import { TestBed, async } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { CfgModule, AppCfg, CFG_OPTIONS } from 'pkgs/cfg';
+
 import { AppComponent } from './app.component';
+
+const AppEnv: AppCfg = {
+  appName: '@nwx/cfg',
+  production: false
+};
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+      imports: [BrowserModule, CfgModule.forRoot(AppEnv)],
+      providers: [{ provide: CFG_OPTIONS, useValue: AppEnv }],
+      declarations: [AppComponent]
     }).compileComponents();
   }));
   it('should create the @nwx/cfg', async(() => {
