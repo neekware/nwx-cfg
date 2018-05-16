@@ -1,6 +1,10 @@
 {
   "name": "@nwx/cfg",
+<<<<<<< HEAD
   "version": "0.0.4",
+=======
+  "version": "0.0.5",
+>>>>>>> master
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neekware/nwx-cfg.git"
