@@ -4,7 +4,7 @@
 
 # Overview
 
-**Best attempt** to streamline angular configuration while keeping it **DRY**.
+**@nwx/cfg** attempts to streamline angular configuration while keeping it **DRY**.
 
 # How to install
 
