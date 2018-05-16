@@ -26,7 +26,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format": "node node_modules/.bin/prettier --single-quote --print-width 90 --write 'apps/**/src/*.{ts,css,scss,json}' 'pkgs/**/src/*.{ts,css,scss,json}'",
-    "publish": "ts-node ./tools/publish.ts"
+    "release": "ts-node ./tools/release.ts -- "
   },
   "private": true,
   "dependencies": {
@@ -53,6 +53,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
+    "commander": "^2.15.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
@@ -64,6 +65,7 @@
     "ng-packagr": "^3.0.0-rc.2",
     "prettier": "^1.12.1",
     "protractor": "~5.3.0",
+    "semver": "^5.5.0",
     "ts-node": "~5.0.1",
     "tsickle": ">=0.25.5",
     "tslib": "^1.7.1",
