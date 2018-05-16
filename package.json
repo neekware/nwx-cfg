@@ -20,7 +20,7 @@
     "int:test": "ng test web --watch=false",
     "int:e2e": "ng e2e web-e2e",
     "int:test:ci": "ng test web --browsers ChromeHeadless --watch=false",
-    "int:e2e:ci": "ng e2e web-e2e -c protractor.conf.ci.js",
+    "int:e2e:ci": "ng e2e web-e2e --protractor-config=apps/web/e2e/protractor.conf.ci.js",
     "int:lint": "ng lint web",
     "### Module ###": "Cfg module commands",
     "pkg:build": "ng build cfg --prod",
