@@ -19,6 +19,9 @@
     "paths": {
       "cfg": [
         "dist/cfg"
+      ],
+      "foo": [
+        "dist/foo"
       ]
     }
   }

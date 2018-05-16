@@ -1,27 +1,88 @@
-# Cfg
+# @nwx/cfg
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
+**A simple configuration module for Angular**
 
-## Development server
+# Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+**@nwx/cfg** attempts to streamline angular configuration while keeping it **DRY**.
 
-## Code scaffolding
+# How to install
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  `npm install @nwx/cfg` (OR) `yarn add @nwx/cfg`
 
-## Build
+# How to use
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```typescript
+// In your environment{prod,staging}.ts
 
-## Running unit tests
+import { AppCfg, TargetPlatform, HttpMethod } from '@nwx/cfg';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+export const environment: AppCfg = {
+  // app name
+  appName: 'Neekware',
+  // target (browser, mobile, desktop)
+  target: TargetPlatform.web,
+  // production, staging or development
+  production: true,
+  // remote configuration (from the server prior to ng bootstrap)
+  rmtCfg: {
+    // server url to get remote config from (default = null)
+    endpoint: '/api/cfg',
+    // GET or POST http method to connect to remote server (default = get)
+    method: HttpMethod.get,
+    // Max timeout of http connection to remote server (default = 2 seconds)
+    timeout: 3,
+    // http headers to include in http connection to remote server
+    headers: { 'Content-Type': 'application/json' }
+    // body of request when using http POST method (default = {})
+    body: {
+      // one or more app specific fields
+    }
+  }
+};
+```
 
-## Running end-to-end tests
+```typescript
+// In your app.module.ts
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+import { CfgModule } from '@nwx/cfg';
+import { environment } from '../environments/environment';
 
-## Further help
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    CfgModule.forRoot(environment)
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```typescript
+// In your app.component.ts or (some.service.ts)
+
+import { Component } from '@angular/core';
+import { CfgService } from 'pkgs/cfg';
+
+@Component({
+  selector: 'app-root'
+})
+export class AppComponent {
+  title = '@nwx/cfg';
+  options = {};
+  constructor(public cfg: CfgService) {
+    this.options = { ...this.cfg.options, ...{ pkgName: this.title } };
+  }
+}
+```
+
+# Running the tests
+
+To run the tests against the current environment:
+
+    npm test cfg
+
+# License
+
+Released under a ([MIT](LICENSE)) license.

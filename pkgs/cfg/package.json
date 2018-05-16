@@ -1,10 +1,9 @@
 {
   "name": "@nwx/cfg",
   "description": "A simple configuration module for an angular app",
-  "version": "0.0.1",
   "peerDependencies": {
     "lodash": "^4.17.5",
-    "@rxjs": "^6.0.0 || ^5.6.0-forward-compat.1 || ^6.0.0-rc.0",
-    "@angular/core": "^6.0.0 || ^6.0.0-rc.3"
+    "rxjs": "^6.0.0 || ^5.6.0-forward-compat.4 || ^6.0.0",
+    "@angular/core": "^6.0.0"
   }
 }

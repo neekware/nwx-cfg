@@ -1,0 +1,54 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.quickSuggestions": true,
+  "editor.formatOnSave": false,
+  "editor.trimAutoWhitespace": true,
+  "blankLine.showMessage": false,
+  "editor.rulers": [120],
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "html.format.endWithNewline": true,
+  "html.format.preserveNewLines": true,
+  "html.format.wrapAttributes": "force-aligned",
+  "html.autoClosingTags": false,
+
+  "emmet.triggerExpansionOnTab": true,
+
+  "prettier.singleQuote": true,
+  "prettier.tabWidth": 2,
+  "prettier.printWidth": 90,
+  "prettier.stylelintIntegration": true,
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/__pycache__": true,
+    "**/.tmp": true,
+    "**/.vscode": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "test-lib": true,
+    "lib": true,
+    "dist": true,
+    "builds": true,
+    "coverage": true,
+    "npm": true,
+    ".*": true,
+    "yarn.lock": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/__pycache__": true,
+    "**/dist": true,
+    "**/builds": true,
+    "**/.tmp": true,
+    "**/.vscode": true,
+    "**/node_modules": true,
+    "**/bower_components": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

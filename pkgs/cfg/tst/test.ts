@@ -1,11 +1,3 @@
-/**
- * @license
- * Copyright Neekware Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at http://neekware.com/license/MIT.html
- */
-
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'core-js/es7/reflect';

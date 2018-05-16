@@ -3,9 +3,9 @@
   "version": 1,
   "newProjectRoot": "pkgs",
   "projects": {
-    "testapp": {
+    "web": {
       "root": "",
-      "sourceRoot": "testapp/src",
+      "sourceRoot": "apps/web/src",
       "projectType": "application",
       "prefix": "app",
       "schematics": {},
@@ -13,26 +13,21 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/testapp",
-            "index": "testapp/src/index.html",
-            "main": "testapp/src/main.ts",
-            "polyfills": "testapp/src/polyfills.ts",
-            "tsConfig": "testapp/src/tsconfig.app.json",
-            "assets": [
-              "testapp/src/favicon.ico",
-              "testapp/src/assets"
-            ],
-            "styles": [
-              "testapp/src/styles.css"
-            ],
+            "outputPath": "dist/apps/web",
+            "index": "apps/web/src/index.html",
+            "main": "apps/web/src/main.ts",
+            "polyfills": "apps/web/src/polyfills.ts",
+            "tsConfig": "apps/web/src/tsconfig.app.json",
+            "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
+            "styles": ["apps/web/src/styles.css"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "testapp/src/environments/environment.ts",
-                  "with": "testapp/src/environments/environment.prod.ts"
+                  "replace": "apps/web/src/environments/environment.ts",
+                  "with": "apps/web/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -50,113 +45,99 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "testapp:build"
+            "browserTarget": "web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "testapp:build:production"
+              "browserTarget": "web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "testapp:build"
+            "browserTarget": "web:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "testapp/src/test.ts",
-            "polyfills": "testapp/src/polyfills.ts",
-            "tsConfig": "testapp/src/tsconfig.spec.json",
-            "karmaConfig": "testapp/src/karma.conf.js",
-            "styles": [
-              "styles.css"
-            ],
+            "main": "apps/web/src/test.ts",
+            "polyfills": "apps/web/src/polyfills.ts",
+            "tsConfig": "apps/web/src/tsconfig.spec.json",
+            "karmaConfig": "apps/web/src/karma.conf.js",
+            "styles": ["styles.css"],
             "scripts": [],
-            "assets": [
-              "testapp/src/favicon.ico",
-              "testapp/src/assets"
-            ]
+            "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"]
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "testapp/src/tsconfig.app.json",
-              "testapp/src/tsconfig.spec.json"
+              "apps/web/src/tsconfig.app.json",
+              "apps/web/src/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "testapp-e2e": {
+    "web-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "testapp/e2e/protractor.conf.js",
-            "devServerTarget": "testapp:serve"
+            "protractorConfig": "apps/web/e2e/protractor.conf.js",
+            "devServerTarget": "web:serve"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "testapp/e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "tsConfig": "apps/web/e2e/tsconfig.e2e.json",
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
     "cfg": {
-      "root": "projects/cfg",
-      "sourceRoot": "projects/cfg/src",
+      "root": "pkgs/cfg",
       "projectType": "library",
-      "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "tsConfig": "projects/cfg/tsconfig.lib.json",
-            "project": "projects/cfg/ng-package.json"
+            "project": "pkgs/cfg/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/cfg/ng-package.prod.json"
+              "project": "pkgs/cfg/ng-package.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/cfg/src/test.ts",
-            "tsConfig": "projects/cfg/tsconfig.spec.json",
-            "karmaConfig": "projects/cfg/karma.conf.js"
+            "main": "pkgs/cfg/tst/test.ts",
+            "tsConfig": "pkgs/cfg/tsconfig.spec.json",
+            "karmaConfig": "pkgs/cfg/karma.conf.js"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/cfg/tsconfig.lib.json",
-              "projects/cfg/tsconfig.spec.json"
+              "pkgs/cfg/tsconfig.lib.json",
+              "pkgs/cfg/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     }
   },
-  "defaultProject": "testapp"
+  "defaultProject": "cfg"
 }
