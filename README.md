@@ -8,7 +8,7 @@
 
 # How to install
 
-  npm install @nwx/cfg (OR) yarn add @nwx/cfg
+  `npm install @nwx/cfg` (OR) `yarn add @nwx/cfg`
 
 # How to use
 
