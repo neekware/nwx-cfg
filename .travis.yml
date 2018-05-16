@@ -22,9 +22,9 @@ before_script:
 
 script:
   - yarn pkg:lint
-  - yarn pkg:test
+  - yarn pkg:test:ci
   - yarn pkg:build
   - yarn int:lint
-  - yarn int:test
+  - yarn int:test:ci
   - yarn int:build
-  - xvfb-run yarn int:e2e
+  - xvfb-run yarn int:e2e:ci
