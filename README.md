@@ -8,9 +8,66 @@
 
 # How to install
 
-  `npm install @nwx/cfg` (OR) `yarn add @nwx/cfg`
+`npm i @nwx/cfg` | `yarn add @nwx/cfg`
 
 # How to use
+
+```typescript
+// In your environment{prod,staging}.ts
+
+import { AppCfg, TargetPlatform, HttpMethod } from '@nwx/cfg';
+
+export const environment: AppCfg = {
+  // app name
+  appName: 'Neekware',
+  // target (browser, mobile, desktop)
+  target: TargetPlatform.web,
+  // production, staging or development
+  production: true,
+  // one or more app specific field(s)
+};
+```
+
+```typescript
+// In your app.module.ts
+
+import { CfgModule } from '@nwx/cfg';
+import { environment } from '../environments/environment';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    CfgModule.forRoot(environment)
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
+```
+
+```typescript
+// In your app.component.ts or (some.service.ts)
+
+import { Component } from '@angular/core';
+import { CfgService } from '@nwx/cfg';
+
+@Component({
+  selector: 'app-root'
+})
+export class AppComponent {
+  title = '@nwx/cfg';
+
+  constructor(public cfg: CfgService) {
+    this.title = this.cfg.options.appName;
+  }
+}
+```
+
+# Advanced usage:
+
+ - Remote configuration
+
+`@nwx/cfg` can also be used to fetch remote configuration prior to start of an Angular app.
 
 ```typescript
 // In your environment{prod,staging}.ts
@@ -36,9 +93,10 @@ export const environment: AppCfg = {
     headers: { 'Content-Type': 'application/json' }
     // body of request when using http POST method (default = {})
     body: {
-      // one or more app specific fields
+      // one or more app specific field(s)
     }
   }
+  // one or more app specific field(s)
 };
 ```
 
@@ -63,7 +121,7 @@ export class AppModule {}
 // In your app.component.ts or (some.service.ts)
 
 import { Component } from '@angular/core';
-import { CfgService } from 'pkgs/cfg';
+import { CfgService } from '@nwx/cfg';
 
 @Component({
   selector: 'app-root'
@@ -71,8 +129,13 @@ import { CfgService } from 'pkgs/cfg';
 export class AppComponent {
   title = '@nwx/cfg';
   options = {};
+
   constructor(public cfg: CfgService) {
-    this.options = { ...this.cfg.options, ...{ pkgName: this.title } };
+    this.options = {
+      ...this.cfg.options,
+      ...{ name: 'AppComponent' }
+    };
+    const remoteCfgData = this.options.rmtData;
   }
 }
 ```
@@ -81,8 +144,8 @@ export class AppComponent {
 
 To run the tests against the current environment:
 
-    npm test cfg
+    npm run test
 
 # License
 
-Released under a ([MIT](LICENSE)) license.
+Released under a ([MIT](https://github.com/neekware/nwx-cfg/blob/master/LICENSE)) license.
