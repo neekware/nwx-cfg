@@ -151,9 +151,9 @@ Released under a ([MIT](https://github.com/neekware/nwx-cfg/blob/master/LICENSE)
 
 X.Y.Z Version
 
-    `MAJOR` version -- when you make incompatible API changes,
-    `MINOR` version -- when you add functionality in a backwards-compatible manner, and
-    `PATCH` version -- when you make backwards-compatible bug fixes.
+    `MAJOR` version -- When making incompatible API changes,
+    `MINOR` version -- When adding functionality in a backwards-compatible manner, and
+    `PATCH` version -- When making backwards-compatible bug fixes.
 
 [status-image]: https://secure.travis-ci.org/neekware/nwx-cfg.png?branch=master
 [status-link]: http://travis-ci.org/neekware/nwx-cfg?branch=master
