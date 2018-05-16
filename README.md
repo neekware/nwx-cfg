@@ -11,7 +11,7 @@
 
 # How to install
 
-`npm i @nwx/cfg` | `yarn add @nwx/cfg`
+    `npm i @nwx/cfg` | `yarn add @nwx/cfg`
 
 # How to use
 
@@ -141,7 +141,7 @@ export class AppComponent {
 
 To run the tests against the current environment:
 
-    npm run test
+    npm run ci
 
 # License
 
