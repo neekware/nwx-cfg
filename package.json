@@ -28,8 +28,7 @@
     "app:test:ci": "ng test web --browsers ChromeHeadless --watch=false",
     "app:e2e:ci": "ng e2e web-e2e --protractor-config=apps/web/e2e/protractor.conf.ci.js",
     "pkg:test:ci": "ng test cfg --browsers ChromeHeadless --watch=false --code-coverage",
-    "ci":
-      "yarn pkg:lint && yarn pkg:test:ci && yarn app:lint && yarn app:test:ci",
+    "ci": "yarn pkg:lint && yarn pkg:test:ci",
     "###----- Tools -----###": "Tool commands",
     "format":
       "node node_modules/.bin/prettier --single-quote --print-width 90 --write 'apps/**/src/*.{ts,css,scss,json}' 'pkgs/**/src/*.{ts,css,scss,json}'",
