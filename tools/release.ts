@@ -69,7 +69,7 @@ async function getDevVersion() {
   // 1.0.0 to become 1.0.0+dev.commitHash
   const version: SemVer = parse(porjPkgJson.version);
   const semVer = `${version.major}.${version.minor}.${version.patch}`;
-  const devVersion = `${semVer}-dev-master-${commitHash}`;
+  const devVersion = `${semVer}-dev-${commitHash}`;
   return devVersion;
 }
 
