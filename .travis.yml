@@ -1,0 +1,30 @@
+
+sudo: false
+dist: trusty
+language: node_js
+node_js:
+  - "9"
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+addons:
+  chrome: stable
+
+install:
+  - yarn
+
+before_script:
+  - "sudo chown root /opt/google/chrome/chrome-sandbox"
+  - "sudo chmod 4755 /opt/google/chrome/chrome-sandbox"
+
+script:
+  - yarn pkg:lint
+  - yarn pkg:test:ci
+  - yarn pkg:build
+  - yarn int:lint
+  - yarn int:test:ci
+  - yarn int:build
+  - xvfb-run yarn int:e2e:ci

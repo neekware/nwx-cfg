@@ -7,7 +7,7 @@ import { CfgService, DefaultCfg } from 'pkgs/cfg';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = '@nwx/cfg';
+  title = 'Neekware';
   options = {};
   constructor(public cfg: CfgService) {
     this.title = this.cfg.options.appName;

@@ -36,7 +36,6 @@
     "builds": true,
     "coverage": true,
     "npm": true,
-    ".*": true,
     "yarn.lock": true
   },
   "search.exclude": {
