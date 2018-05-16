@@ -99,6 +99,13 @@ async function main() {
     await execute(`cd ${moduleBuildPath} && ${publishCmd}`).catch(error => {
       console.log(`Failed to publish package. ${error}`);
     });
+
+    if (!program.dev) {
+      console.log('You probably want to also tag the version now:');
+      console.log(
+        ` git tag -a ${newVersion} -m 'version ${newVersion}' && git push --tags`
+      );
+    }
   }
 }
 
