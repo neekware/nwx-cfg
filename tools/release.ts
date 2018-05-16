@@ -49,7 +49,7 @@ async function syncPackageData() {
 
 async function buildPackage() {
   if (program.build) {
-    const cmd = `cd .. && ng build --prod && cd -`;
+    const cmd = `ng build --prod`;
     console.log(cmd);
     await execute(cmd).catch(error => {
       console.log(`Failed to build @nwx/cfg ... ${error}`);
@@ -84,7 +84,7 @@ async function main() {
   let newVersion = porjPkgJson.version;
   let publishCmd = `yarn publish ${publishOptions} --new-version ${newVersion} --tag latest`;
   if (program.dev) {
-    newVersion = getDevVersion();
+    newVersion = await getDevVersion();
     publishCmd = `yarn publish ${publishOptions} --new-version ${newVersion} --tag dev`;
   }
 
