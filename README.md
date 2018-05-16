@@ -10,7 +10,7 @@
 
   1. npm install @nwx/cfg
 
-    OR
+  OR
 
   2. yarn add @nwx/cfg
 
