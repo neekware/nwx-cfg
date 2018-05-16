@@ -28,3 +28,6 @@ script:
   - yarn int:test:ci
   - yarn int:build
   - xvfb-run yarn int:e2e:ci
+
+after_script:
+  - cat ./coverage/cfg/lcov.info | ./node_modules/coveralls/bin/coveralls.js

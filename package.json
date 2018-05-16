@@ -5,7 +5,12 @@
     "type": "git",
     "url": "git+https://github.com/neekware/nwx-cfg.git"
   },
-  "keywords": ["ng", "angular", "config", "configuration"],
+  "keywords": [
+    "ng",
+    "angular",
+    "config",
+    "configuration"
+  ],
   "author": "Val Neekman",
   "contributors": [],
   "license": "MIT",
@@ -19,7 +24,7 @@
     "int:build": "ng build --prod web",
     "int:test": "ng test web --watch=false",
     "int:e2e": "ng e2e web-e2e",
-    "int:test:ci": "ng test web --browsers ChromeHeadless --watch=false --code-coverage",
+    "int:test:ci": "ng test web --browsers ChromeHeadless --watch=false",
     "int:e2e:ci": "ng e2e web-e2e --protractor-config=apps/web/e2e/protractor.conf.ci.js",
     "int:lint": "ng lint web",
     "### Module ###": "Cfg module commands",
@@ -28,8 +33,7 @@
     "pkg:test:ci": "ng test cfg --browsers ChromeHeadless --watch=false --code-coverage",
     "pkg:lint": "ng lint cfg",
     "### Tools ###": "Tool commands",
-    "format":
-      "node node_modules/.bin/prettier --single-quote --print-width 90 --write 'apps/**/src/*.{ts,css,scss,json}' 'pkgs/**/src/*.{ts,css,scss,json}'",
+    "format": "node node_modules/.bin/prettier --single-quote --print-width 90 --write 'apps/**/src/*.{ts,css,scss,json}' 'pkgs/**/src/*.{ts,css,scss,json}'",
     "release": "ts-node ./tools/release.ts -- "
   },
   "private": true,
@@ -58,6 +62,7 @@
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
     "commander": "^2.15.1",
+    "coveralls": "^3.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
