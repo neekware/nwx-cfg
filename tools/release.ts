@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { writeFile } from 'fs';
+import { writeFile, writeFileSync, readFileSync } from 'fs';
 import { pick, get } from 'lodash';
 import * as path from 'path';
 import { resolve } from 'path';
@@ -45,6 +45,11 @@ async function syncPackageData() {
   await writeFile(modulePkgPath, JSON.stringify(modulePkg, null, 2), () => {
     console.error(`Flushed package.json  ...`);
   });
+
+  await writeFileSync(
+    path.join(moduleBuildPath, './README.md'),
+    readFileSync('./README.md')
+  );
 }
 
 async function buildPackage() {
