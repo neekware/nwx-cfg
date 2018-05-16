@@ -2,6 +2,9 @@
 
 **A simple configuration module for Angular applications**
 
+[![status-image]][status-link]
+[![coverage-image]][coverage-link]
+
 # Overview
 
 **@nwx/cfg** attempts to streamline the app configuration while keeping it **DRY**.
@@ -23,7 +26,7 @@ export const environment: AppCfg = {
   // target (browser, mobile, desktop)
   target: TargetPlatform.web,
   // production, staging or development
-  production: true,
+  production: true
   // one or more app specific field(s)
 };
 ```
@@ -36,10 +39,7 @@ import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    CfgModule.forRoot(environment)
-  ],
+  imports: [BrowserModule, CfgModule.forRoot(environment)],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
@@ -65,7 +65,7 @@ export class AppComponent {
 
 # Advanced usage:
 
- - Remote configuration
+* Remote configuration
 
 `@nwx/cfg` can also be used to fetch remote configuration prior to start of an Angular app.
 
@@ -108,10 +108,7 @@ import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    CfgModule.forRoot(environment)
-  ],
+  imports: [BrowserModule, CfgModule.forRoot(environment)],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
@@ -149,3 +146,16 @@ To run the tests against the current environment:
 # License
 
 Released under a ([MIT](https://github.com/neekware/nwx-cfg/blob/master/LICENSE)) license.
+
+# Version
+
+X.Y.Z Version
+
+    `MAJOR` version -- when you make incompatible API changes,
+    `MINOR` version -- when you add functionality in a backwards-compatible manner, and
+    `PATCH` version -- when you make backwards-compatible bug fixes.
+
+[status-image]: https://secure.travis-ci.org/neekware/nwx-cfg.png?branch=master
+[status-link]: http://travis-ci.org/neekware/nwx-cfg?branch=master
+[coverage-image]: https://coveralls.io/repos/neekware/nwx-cfg/badge.svg
+[coverage-link]: https://coveralls.io/r/neekware/nwx-cfg
