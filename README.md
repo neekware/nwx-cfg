@@ -11,7 +11,7 @@
 
 # How to install
 
-    `npm i @nwx/cfg` | `yarn add @nwx/cfg`
+    npm i @nwx/cfg <|OR|> yarn add @nwx/cfg
 
 # How to use
 
