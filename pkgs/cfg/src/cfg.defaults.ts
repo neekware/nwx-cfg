@@ -30,6 +30,7 @@ export const DefaultAppCfg: AppCfg = {
   production: false,
   appName: '@nwx/cfg',
   target: TargetPlatform.web,
+  cfg: DefaultCfg,
   rmtCfg: DefaultRemoteCfg,
   rmtData: {}
 };

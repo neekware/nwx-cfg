@@ -1,3 +1,9 @@
+## 1.0.3
+
+Bugfix:
+
+* default app cfg should be merged-in on start
+
 ## 1.0.2
 
 Enhancements:

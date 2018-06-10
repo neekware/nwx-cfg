@@ -31,21 +31,6 @@ export class EnvCfg {
   [id: string]: any;
 }
 
-export class RemoteCfg {
-  // url to fetch config file from
-  endpoint: string;
-  // http headers to be sent with request
-  headers?: { [id: string]: any };
-  // post body to be sent with request
-  body?: { [id: string]: any };
-  // http method (get, post) (if post, body will be ignored)
-  method?: HttpMethod;
-  // maximum time in seconds to wait for remote config response
-  timeout: number;
-  // extra attributes
-  [id: string]: any;
-}
-
 export class Cfg {
   // if target supports multi-tab apps (browsers)
   multiTab?: boolean;
@@ -57,6 +42,21 @@ export class Cfg {
   loggedInLandingPageUrl?: string;
   // url to the page where users are redirected to after log-out
   loggedOutRedirectUrl?: string;
+  // extra attributes
+  [id: string]: any;
+}
+
+export class RemoteCfg {
+  // url to fetch config file from
+  endpoint: string;
+  // http headers to be sent with request
+  headers?: { [id: string]: any };
+  // post body to be sent with request
+  body?: { [id: string]: any };
+  // http method (get, post) (if post, body will be ignored)
+  method?: HttpMethod;
+  // maximum time in seconds to wait for remote config response
+  timeout: number;
   // extra attributes
   [id: string]: any;
 }

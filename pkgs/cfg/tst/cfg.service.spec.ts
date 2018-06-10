@@ -35,6 +35,13 @@ describe('CfgService', () => {
   it(
     'should be have merged the default config options',
     inject([CfgService, CFG_OPTIONS], (service: CfgService) => {
+      expect(service.options.cfg.loginPageUrl).toBe('/auth/login');
+    })
+  );
+
+  it(
+    'should be have merged the default rmt config options',
+    inject([CfgService, CFG_OPTIONS], (service: CfgService) => {
       expect(service.options.rmtCfg.timeout).toBe(2);
     })
   );
