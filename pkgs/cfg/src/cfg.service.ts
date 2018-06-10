@@ -14,18 +14,14 @@ import { of as observableOf } from 'rxjs';
 import { timeout, catchError } from 'rxjs/operators';
 
 import { AppCfg, HttpMethod } from './cfg.types';
-import { DefaultCfg, CFG_OPTIONS, DefaultRemoteCfg } from './cfg.defaults';
+import { DefaultCfg, CFG_OPTIONS, DefaultRemoteCfg, DefaultAppCfg } from './cfg.defaults';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CfgService {
   constructor(@Inject(CFG_OPTIONS) private _options: AppCfg, private http: HttpClient) {
-    this._options = merge(this._options, {
-      cfg: DefaultCfg,
-      rmtCfg: DefaultRemoteCfg,
-      rmtData: {}
-    });
+    this._options = merge(DefaultAppCfg, this._options);
     if (!this._options.production) {
       console.log(`CfgService ready ...`);
     }
