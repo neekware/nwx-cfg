@@ -28,7 +28,7 @@ describe('CfgService', () => {
   it(
     'should be have the config options',
     inject([CfgService, CFG_OPTIONS], (service: CfgService) => {
-      expect(service.options.appName).toBe(AppEnv.appName);
+      expect(service.options.appName).toBe('@nwx/cfg');
     })
   );
 

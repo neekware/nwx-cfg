@@ -131,7 +131,7 @@ export class AppComponent {
   options = {};
 
   constructor(public cfg: CfgService) {
-    this.options = merge(this.cfg.options, { name: 'AppComponent' }};
+    this.options = merge({ name: 'AppComponent' }, this.cfg.options};
     const remoteCfgData = this.options.rmtData;
   }
 }
