@@ -121,6 +121,7 @@ export class AppModule {}
 
 import { Component } from '@angular/core';
 import { CfgService } from '@nwx/cfg';
+import { merge } from 'lodash';
 
 @Component({
   selector: 'app-root'
@@ -130,10 +131,7 @@ export class AppComponent {
   options = {};
 
   constructor(public cfg: CfgService) {
-    this.options = {
-      ...this.cfg.options,
-      ...{ name: 'AppComponent' }
-    };
+    this.options = merge(this.cfg.options, { name: 'AppComponent' }};
     const remoteCfgData = this.options.rmtData;
   }
 }
@@ -159,12 +157,9 @@ X.Y.Z Version
 
 [status-image]: https://secure.travis-ci.org/neekware/nwx-cfg.png?branch=master
 [status-link]: http://travis-ci.org/neekware/nwx-cfg?branch=master
-
 [version-image]: https://img.shields.io/npm/v/@nwx/cfg.svg
 [version-link]: https://www.npmjs.com/package/@nwx/cfg
-
 [coverage-image]: https://coveralls.io/repos/neekware/nwx-cfg/badge.svg
 [coverage-link]: https://coveralls.io/r/neekware/nwx-cfg
-
 [download-image]: https://img.shields.io/npm/dm/@nwx/cfg.svg
 [download-link]: https://www.npmjs.com/package/@nwx/cfg

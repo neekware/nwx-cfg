@@ -8,7 +8,7 @@
 
 import { InjectionToken } from '@angular/core';
 
-import { Cfg, HttpMethod, RemoteCfg } from './cfg.types';
+import { Cfg, HttpMethod, RemoteCfg, AppCfg, TargetPlatform } from './cfg.types';
 
 export const DefaultCfg: Cfg = {
   multiTab: true,
@@ -24,6 +24,12 @@ export const DefaultRemoteCfg: RemoteCfg = {
   timeout: 2, // seconds
   headers: { 'Content-Type': 'application/json' },
   body: {}
+};
+
+export const DefaultAppCfg: AppCfg = {
+  production: false,
+  appName: '@nwx/cfg',
+  target: TargetPlatform.web
 };
 
 /** App configuration options */

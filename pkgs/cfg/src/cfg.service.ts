@@ -9,7 +9,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { get, isEmpty } from 'lodash';
+import { get, isEmpty, merge } from 'lodash';
 import { of as observableOf } from 'rxjs';
 import { timeout, catchError } from 'rxjs/operators';
 
@@ -21,19 +21,14 @@ import { DefaultCfg, CFG_OPTIONS, DefaultRemoteCfg } from './cfg.defaults';
 })
 export class CfgService {
   constructor(@Inject(CFG_OPTIONS) private _options: AppCfg, private http: HttpClient) {
-    this.updateOptions({
+    this._options = merge(this._options, {
       cfg: DefaultCfg,
       rmtCfg: DefaultRemoteCfg,
-      ...this._options,
       rmtData: {}
     });
     if (!this._options.production) {
       console.log(`CfgService ready ...`);
     }
-  }
-
-  updateOptions(data: Object) {
-    this._options = { ...this._options, ...data };
   }
 
   loadRemoteOptions(): Promise<any> {
