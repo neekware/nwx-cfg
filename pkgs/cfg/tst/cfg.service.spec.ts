@@ -7,8 +7,7 @@ import { CFG_OPTIONS } from '../src/cfg.defaults';
 import { CfgModule } from '../src/cfg.module';
 
 const AppEnv: AppCfg = {
-  appName: '@nwx/cfg',
-  production: false
+  production: true
 };
 
 describe('CfgService', () => {
@@ -30,6 +29,13 @@ describe('CfgService', () => {
     'should be have the config options',
     inject([CfgService, CFG_OPTIONS], (service: CfgService) => {
       expect(service.options.appName).toBe(AppEnv.appName);
+    })
+  );
+
+  it(
+    'should be have merged the default config options',
+    inject([CfgService, CFG_OPTIONS], (service: CfgService) => {
+      expect(service.options.rmtCfg.timeout).toBe(2);
     })
   );
 });

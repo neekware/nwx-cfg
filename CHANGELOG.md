@@ -1,3 +1,10 @@
+## 1.0.1
+
+Enhancements:
+
+  - Merge options with default options
+  - More test, cleanup
+
 ## 1.0.0
 
 Enhancements:
