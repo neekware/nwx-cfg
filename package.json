@@ -26,7 +26,8 @@
     "pkg:lint": "ng lint cfg",
     "###----- CI -----###": "Continuous integration",
     "app:test:ci": "ng test web --browsers ChromeHeadless --watch=false",
-    "app:e2e:ci": "ng e2e web-e2e --protractor-config=apps/web/e2e/protractor.conf.ci.js",
+    "app:e2e:ci":
+      "ng e2e web-e2e --port 5300 --protractor-config=apps/web/e2e/protractor.conf.ci.js",
     "pkg:test:ci": "ng test cfg --browsers ChromeHeadless --watch=false --code-coverage",
     "ci": "yarn pkg:lint && yarn pkg:test:ci",
     "ci:all": "yarn ci && yarn app:lint && yarn app:test:ci && yarn app:e2e:ci",
