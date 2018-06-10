@@ -1,0 +1,11 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# JS and TS files must always use LF for tools to work
+*.js eol=lf
+*.ts eol=lf
+
+# ignore the repo and look at the pkgs dir for language type
+* linguist-vendored
+pkgs/* linguist-vendored=false
+
