@@ -23,6 +23,8 @@
 import { AppCfg, TargetPlatform, HttpMethod } from '@nwx/cfg';
 
 export const environment: AppCfg = {
+  // release version
+  version: string;
   // app name
   appName: 'Neekware',
   // target (browser, mobile, desktop)
@@ -77,6 +79,8 @@ export class AppComponent {
 import { AppCfg, TargetPlatform, HttpMethod } from '@nwx/cfg';
 
 export const environment: AppCfg = {
+  // release version
+  version: '1.0.0',
   // app name
   appName: 'Neekware',
   // target (browser, mobile, desktop)
@@ -141,7 +145,7 @@ export class AppComponent {
 
 To run the tests against the current environment:
 
-    npm run ci
+    npm run ci:all
 
 # License
 
