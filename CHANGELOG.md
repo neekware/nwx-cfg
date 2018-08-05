@@ -1,3 +1,9 @@
+## 2.0.0
+
+Feature:
+
+* Add release version
+
 ## 1.0.3
 
 Bugfix:

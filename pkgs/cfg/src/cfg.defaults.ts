@@ -27,6 +27,7 @@ export const DefaultRemoteCfg: RemoteCfg = {
 };
 
 export const DefaultAppCfg: AppCfg = {
+  version: '0.0.1',
   production: false,
   appName: '@nwx/cfg',
   target: TargetPlatform.web,

@@ -6,6 +6,7 @@ import { CfgModule, AppCfg, CFG_OPTIONS } from 'pkgs/cfg';
 import { AppComponent } from './app.component';
 
 const AppEnv: AppCfg = {
+  version: '1.0.0',
   appName: '@nwx/cfg',
   production: false
 };
@@ -18,16 +19,25 @@ describe('AppComponent', () => {
       declarations: [AppComponent]
     }).compileComponents();
   }));
+
   it('should create the @nwx/cfg', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
+
+  it('should have correct cfg', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    expect(app.cfg.options.version).toEqual('1.0.0');
+  }));
+
   it(`should have as title '@nwx/cfg'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('@nwx/cfg');
   }));
+
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();

@@ -21,6 +21,8 @@ export enum HttpMethod {
 }
 
 export class EnvCfg {
+  // release version
+  version: string;
   // if a production build
   production: boolean;
   // name of this app

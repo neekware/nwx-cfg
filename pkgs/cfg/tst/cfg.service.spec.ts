@@ -7,6 +7,7 @@ import { CFG_OPTIONS } from '../src/cfg.defaults';
 import { CfgModule } from '../src/cfg.module';
 
 const AppEnv: AppCfg = {
+  version: '1.0.0',
   production: true
 };
 
@@ -26,8 +27,9 @@ describe('CfgService', () => {
   );
 
   it(
-    'should be have the config options',
+    'should be have the version options',
     inject([CfgService, CFG_OPTIONS], (service: CfgService) => {
+      expect(service.options.version).toBe('1.0.0');
       expect(service.options.appName).toBe('@nwx/cfg');
     })
   );
