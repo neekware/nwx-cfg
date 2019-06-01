@@ -2,8 +2,7 @@
   "name": "@nwx/cfg",
   "description": "A simple configuration module for an angular app",
   "peerDependencies": {
-    "lodash": "^4.17.10",
-    "rxjs": "^6.2.2 || ^6.2.2",
-    "@angular/core": "^6.1.0"
+    "@angular/core": "^7.0.0 || ^8.0.0 || ^9.0.0-0",
+    "lodash": "^4.17.10"
   }
 }

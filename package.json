@@ -1,6 +1,6 @@
 {
   "name": "@nwx/cfg",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/neekware/nwx-cfg.git"
@@ -47,7 +47,6 @@
     "@angular/compiler": "^6.1.1",
     "@angular/core": "^6.1.1",
     "@angular/forms": "^6.1.1",
-    "@angular/http": "^6.1.1",
     "@angular/platform-browser": "^6.1.1",
     "@angular/platform-browser-dynamic": "^6.1.1",
     "@angular/router": "^6.1.1",
@@ -59,7 +58,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.7.2",
     "@angular-devkit/build-ng-packagr": "^0.7.2",
-    "@angular/cli": "^6.1.2",
+    "@angular/cli": "^8.0.1",
     "@angular/compiler-cli": "^6.1.1",
     "@angular/language-service": "^6.1.1",
     "@types/jasmine": "^2.8.8",
@@ -75,7 +74,7 @@
     "karma-coverage-istanbul-reporter": "^2.0.1",
     "karma-jasmine": "^1.1.2",
     "karma-jasmine-html-reporter": "^1.2.0",
-    "ng-packagr": "^3.0.6",
+    "ng-packagr": "^5.2.0",
     "prettier": "^1.14.0",
     "protractor": "^5.4.0",
     "semver": "^5.5.0",
