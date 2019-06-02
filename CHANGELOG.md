@@ -1,3 +1,9 @@
+## 2.0.1
+
+Enhancements:
+
+* Upgrade to Angular 8.0
+
 ## 2.0.0
 
 Feature:
