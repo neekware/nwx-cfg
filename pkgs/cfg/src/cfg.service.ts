@@ -20,8 +20,9 @@ import { CFG_OPTIONS, DefaultAppCfg } from './cfg.defaults';
   providedIn: 'root'
 })
 export class CfgService {
-  constructor(@Inject(CFG_OPTIONS) private options: AppCfg, private http: HttpClient) {
-    this.options = merge(DefaultAppCfg, options);
+  options: AppCfg;
+  constructor(@Inject(CFG_OPTIONS) private appOptions: AppCfg, private http: HttpClient) {
+    this.options = merge(DefaultAppCfg, appOptions);
     if (!this.options.production) {
       console.log(`CfgService ready ...`);
     }
