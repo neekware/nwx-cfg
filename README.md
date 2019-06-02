@@ -167,3 +167,7 @@ X.Y.Z Version
 [coverage-link]: https://coveralls.io/r/neekware/nwx-cfg
 [download-image]: https://img.shields.io/npm/dm/@nwx/cfg.svg
 [download-link]: https://www.npmjs.com/package/@nwx/cfg
+
+# Sponsors
+
+[Surge](https://github.com/surgeforward)
