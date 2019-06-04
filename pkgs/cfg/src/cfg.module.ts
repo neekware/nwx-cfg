@@ -11,7 +11,6 @@ import {
   Optional,
   SkipSelf,
   ModuleWithProviders,
-  InjectionToken,
   APP_INITIALIZER
 } from '@angular/core';
 import { CommonModule } from '@angular/common';

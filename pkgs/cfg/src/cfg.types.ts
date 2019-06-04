@@ -58,7 +58,7 @@ export class RemoteCfg {
   // http method (get, post) (if post, body will be ignored)
   method?: HttpMethod;
   // maximum time in seconds to wait for remote config response
-  timeout: number;
+  timeout?: number;
   // extra attributes
   [id: string]: any;
 }

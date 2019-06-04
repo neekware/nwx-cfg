@@ -1,3 +1,9 @@
+## 2.0.2
+
+Enhancements:
+
+* Clean up - add Angular logo
+
 ## 2.0.1
 
 Enhancements:
