@@ -1,9 +1,8 @@
+# Library was deprecated in favor of [`@fullerstack/ngx-config`](https://github.com/neekware/fullerstack/tree/main/libs/ngx-config)
+
 # @nwx/cfg
 
 **A simple configuration module for Angular applications**
-
-# Library was deprecated in favor of [`@fullerstack/ngx-config`](https://github.com/neekware/fullerstack/tree/main/libs/ngx-config)
-
 
 <!-- [![status-image]][status-link]
 [![version-image]][version-link]
